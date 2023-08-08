@@ -1,14 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import "./index.css";
+import './index.css';
+import { store, useStore } from './store';
 
-const App = () => (
-  <div className="container">
-    <div>Name: Shell</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+const App = () => {
+  const { count } = useStore();
+  return (
+    <div className='container'>
+      <div>Name: Shell</div>
+      {count}
+    </div>
+  );
+};
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
 );
-ReactDOM.render(<App />, document.getElementById("app"));
