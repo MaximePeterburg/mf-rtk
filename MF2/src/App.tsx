@@ -2,6 +2,7 @@ import Header from 'Shell/Header';
 import { StoreProvider, useStore } from 'Shell/store';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './Shell.decl.d';
 import './index.css';
 
 const App = () => {
