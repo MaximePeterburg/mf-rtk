@@ -1,5 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { useAppSelector } from './hooks';
 
@@ -35,6 +35,9 @@ export function useStore() {
     decrement: () => dispatch(decrement())
   };
 }
-export const StoreProvider = ({ children }) => {
+interface StoreProviderProps {
+  children: ReactNode;
+}
+export const StoreProvider: React.FC<StoreProviderProps> = ({ children }) => {
   return <Provider store={store}>{children}</Provider>;
 };
