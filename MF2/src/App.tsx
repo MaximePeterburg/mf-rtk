@@ -1,14 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import Header from 'Shell/Header';
+import { StoreProvider, useStore } from 'Shell/store';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-import "./index.css";
-
-const App = () => (
-  <div className="container">
-    <div>Name: MF2</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+const App = () => {
+  const { decrement } = useStore();
+  return (
+    <div className='container'>
+      <Header />
+      <button onClick={decrement}>decrement</button>
+    </div>
+  );
+};
+ReactDOM.render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>,
+  document.getElementById('app')
 );
-ReactDOM.render(<App />, document.getElementById("app"));

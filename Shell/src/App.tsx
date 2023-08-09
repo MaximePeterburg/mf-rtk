@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
+import Header from './Header';
 import './index.css';
 import { store, useStore } from './store';
 
 const App = () => {
-  const { count } = useStore();
-  return (
-    <div className='container'>
-      <div>Name: Shell</div>
-      {count}
-    </div>
-  );
+  return <Header />;
 };
 ReactDOM.render(
   <Provider store={store}>

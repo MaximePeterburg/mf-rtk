@@ -8,3 +8,10 @@ body {
   max-width: 800px;
   margin-top: 20px;
 }
+.HeaderContainer {
+  display: flex;
+  justify-content: center;
+}
+.Header {
+  font-size: 3rem;
+}

@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { Provider, useDispatch } from 'react-redux';
 import { useAppSelector } from './hooks';
 
 const initialState = {
@@ -34,3 +35,6 @@ export function useStore() {
     decrement: () => dispatch(decrement())
   };
 }
+export const StoreProvider = ({ children }) => {
+  return <Provider store={store}>{children}</Provider>;
+};

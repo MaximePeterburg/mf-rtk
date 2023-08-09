@@ -1,14 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import Header from 'Shell/Header';
+import { StoreProvider, useStore } from 'Shell/store';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-import "./index.css";
-
-const App = () => (
-  <div className="container">
-    <div>Name: MF1</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+const App = () => {
+  const { increment } = useStore();
+  return (
+    <>
+      <Header />
+      <main className='PageContainer'>
+        <button onClick={increment} className='Button'>
+          increment
+        </button>
+      </main>
+    </>
+  );
+};
+ReactDOM.render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>,
+  document.getElementById('app')
 );
-ReactDOM.render(<App />, document.getElementById("app"));
