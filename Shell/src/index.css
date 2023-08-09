@@ -2,16 +2,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-  font-size: 3rem;
-  margin: auto;
-  max-width: 800px;
-  margin-top: 20px;
-}
 .HeaderContainer {
   display: flex;
   justify-content: center;
+  font-size: 3rem;
+  margin: auto;
+  max-width: 800px;
+  background-color: blue;
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
 }
 .Header {
+  color: white;
   font-size: 3rem;
 }

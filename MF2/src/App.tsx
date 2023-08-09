@@ -7,10 +7,14 @@ import './index.css';
 const App = () => {
   const { decrement } = useStore();
   return (
-    <div className='container'>
+    <>
       <Header />
-      <button onClick={decrement}>decrement</button>
-    </div>
+      <main className='PageContainer'>
+        <button onClick={decrement} className='Button'>
+          decrement
+        </button>
+      </main>
+    </>
   );
 };
 ReactDOM.render(
